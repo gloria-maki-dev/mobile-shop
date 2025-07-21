@@ -1,0 +1,37 @@
+.search-bar-modern {
+    display: flex;
+    align-items: center;
+    background-color: #2b2e4a;
+    border: 2px solid #4f556e;
+    border-radius: 999px;
+    padding: 10px 16px;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+    gap: 12px;
+  }
+  
+  .search-input-modern {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .search-input-modern::placeholder {
+    color: #ccc;
+    font-weight: 500;
+  }
+  
+  .search-icon {
+    flex-shrink: 0;
+  }
+  
+  .filter-icon {
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  
