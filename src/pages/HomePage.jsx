@@ -4,7 +4,8 @@ import { useEffect, useState } from "react"
 import { fetchProducts } from "../services/productService"
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
-import "../assets/styles/HomePage.css"
+import SearchBar from "../components/SearchBar"
+import "../assets/styles/home-page.css"
 
 const HomePage = () => {
   const [products, setProducts] = useState([])
@@ -13,10 +14,11 @@ const HomePage = () => {
   useEffect(() => {
     fetchProducts().then(setProducts)
   }, [])
-
+  const normalized = search.trim().toLowerCase()
   const filtered = products.filter(
-    (p) => p.brand.toLowerCase().includes(search.toLowerCase()) || p.model.toLowerCase().includes(search.toLowerCase()),
+    (p) => p.brand.toLowerCase().includes(normalized) || p.model.toLowerCase().includes(normalized),
   )
+  console.log("search:", search, "normalized:", normalized, "filtered:", filtered.length)
 
   return (
     <div className="container">
@@ -27,16 +29,7 @@ const HomePage = () => {
       <main className="main-content">
         <div className="content-header">
           <h2 className="list-title">LIST VIEW</h2>
-          <div className="search-section">
-            <input
-              type="text"
-              placeholder="Buscar..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="search-input"
-            />
-            <button className="search-button">SEARCH</button>
-          </div>
+          <SearchBar search={search} setSearch={setSearch} />
         </div>
 
         <div className="products-grid">
