@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { fetchProductDetail, addToCart } from '../services/productService';
 import Header from '../components/Header';
-import { useCart } from '../context/CartContext'; // 👈 importa el contexto
+import { useCart } from '../context/useCart';
 import '../assets/styles/product-detail.css';
 
 const ProductDetailPage = () => {

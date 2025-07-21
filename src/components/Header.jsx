@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Smartphone, ShoppingCart, ChevronRight, Home } from "lucide-react";
-import { useCart } from "../context/CartContext";
+import { useCart } from '../context/useCart';
 import "../assets/styles/header.css";
 
 const Header = ({ breadcrumbs = [{ label: "Inicio", href: "/" }] }) => {
