@@ -5,7 +5,6 @@ import "../assets/styles/header.css";
 
 const Header = ({ breadcrumbs = [{ label: "Inicio", href: "/" }] }) => {
   const { count } = useCart();
-
   return (
     <header className="header">
       <div className="header-container">
@@ -21,7 +20,9 @@ const Header = ({ breadcrumbs = [{ label: "Inicio", href: "/" }] }) => {
                 <Link to={item.href} className="breadcrumb-link">
                   {item.label}
                 </Link>
-                {i < breadcrumbs.length - 1 && <ChevronRight className="chevron-icon" />}
+                {i < breadcrumbs.length - 1 && (
+                  <ChevronRight className="chevron-icon" />
+                )}
               </span>
             ))}
           </nav>
@@ -41,7 +42,9 @@ const Header = ({ breadcrumbs = [{ label: "Inicio", href: "/" }] }) => {
               <Link to={item.href} className="breadcrumb-link-mobile">
                 {item.label}
               </Link>
-              {i < breadcrumbs.length - 1 && <ChevronRight className="chevron-icon-mobile" />}
+              {i < breadcrumbs.length - 1 && (
+                <ChevronRight className="chevron-icon-mobile" />
+              )}
             </span>
           ))}
         </nav>

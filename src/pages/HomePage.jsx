@@ -18,7 +18,6 @@ const HomePage = () => {
   const filtered = products.filter(
     (p) => p.brand.toLowerCase().includes(normalized) || p.model.toLowerCase().includes(normalized),
   )
-  console.log("search:", search, "normalized:", normalized, "filtered:", filtered.length)
   const renderStars = (rating) => {
     const stars = []
     for (let i = 1; i <= 5; i++) {
@@ -59,7 +58,6 @@ const HomePage = () => {
               </Link>
             ))}
           </div>
-
           {filtered.length === 0 && (
             <div className="no-results">
               <p>No se encontraron productos que coincidan con tu búsqueda.</p>
